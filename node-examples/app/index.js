@@ -7,7 +7,7 @@
  */
 var prefix = "/jwt/"; //change virtual proxy prefix if different than jwt.
 var config = {
-    host: "Enter Qlik Sense host name here",
+    host: "ruhanwin",
     prefix: prefix,
     port: 443,
     isSecure: true
@@ -27,7 +27,7 @@ require(["js/qlik"], function(qlik) {
 
     //callbacks -- inserted here --
     //open apps -- inserted here --
-    var app = qlik.openApp('07daff51-8263-4833-b0fd-31ad85fdb2a0', config);
+    var app = qlik.openApp('9e5dfa89-bd3f-4172-80b2-a596c5455ef7', config);
 
     //get objects -- inserted here --
     app.getObject('QV05', 'qamd');

@@ -11,18 +11,18 @@ var _ = require("lodash");
 //CONFIG SECTION                                            /
 //**********************************************************/
 
-var jwtEncryptionKey = fs.readFileSync("Enter the path to the private key used to encrypt the json web token.");
+var jwtEncryptionKey = fs.readFileSync("ruhanwin/server_key.pem");
 
-var jwtDecryptionCert = fs.readFileSync("Enter the path to the public key that will be used to decrypt the jwt token.");
+var jwtDecryptionCert = fs.readFileSync("ruhanwin/server.pem");
 
-var hostname = "hostname of Qlik Sense server where jwt token will be sent.";
-var prefix = "virtual proxy prefix";
+var hostname = "ruhanwin";
+var prefix = "jwt";
 
 var token = jwt.sign({
-    "userId": "boz",
-    "userDirectory": "example",
-    "email": "boz@example.com",
-    "Group": ["sales", "finance", "marketing"]
+    "userId": "ruhan-jwt-js",
+    "userDirectory": "JWT",
+    // "email": "boz@example.com",
+    // "Group": ["sales", "finance", "marketing"]
 }, jwtEncryptionKey, {
     "algorithm": "RS256"
 })
