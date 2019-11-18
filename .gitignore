@@ -38,6 +38,7 @@ build/Release
 # Dependency directories
 node-examples/node_modules/
 jspm_packages/
+node-examples/ruhanwin/
 
 # Typescript v1 declaration files
 typings/
