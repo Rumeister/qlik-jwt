@@ -20,7 +20,7 @@ var prefix = "jwt";
 
 var token = jwt.sign({
     "userId": "ruhan-jwt-js",
-    "userDirectory": "JWT",
+    "userDirectory": "JWT"
     // "email": "boz@example.com",
     // "Group": ["sales", "finance", "marketing"]
 }, jwtEncryptionKey, {

@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 //set the port for the listener here
-var port = 8185;
+var port = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -21,22 +21,22 @@ app.use(bodyParser.urlencoded({
 //CONFIG SECTION                                            /
 //**********************************************************/
 
-var jwtEncryptionKey = fs.readFileSync("Enter the path to the private key used to encrypt the json web token.");
+var jwtEncryptionKey = fs.readFileSync("ruhanwin/server_key.pem");
 
 //In this section, provide the certificate files for running the node server that will host the mashup.
-var serverKey = fs.readFileSync("Enter the path to the private key used to secure this website.");
-var serverCert = fs.readFileSync("Enter the path to the server certificate used for this website.");
+var serverKey = fs.readFileSync("ruhanwin/server_key.pem");
+var serverCert = fs.readFileSync("ruhanwin/server.pem");
 
-var hostname = "hostname of Qlik Sense server where jwt token will be sent.";
-var prefix = "virtual proxy prefix";
+var hostname = "ruhanwin";
+var prefix = "jwt";
 
 //In the following function, update the attributes and add more if desired.
 function createToken() {
     var token = jwt.sign({
-        "userId": "boz",
-        "userDirectory": "example",
-        "email": "boz@example.com",
-        "Group": ["sales", "finance", "marketing"]
+        "userId": "ruhan-jwt-js",
+        "userDirectory": "JWT"
+        // "email": "boz@example.com",
+        // "Group": ["sales", "finance", "marketing"]
     }, jwtEncryptionKey, {
         "algorithm": "RS256"
     })
